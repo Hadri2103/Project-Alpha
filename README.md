@@ -1,5 +1,5 @@
 ﻿# Project-Alpha
-Algorithme de trading automatique basé sur du reinforcement learning (RL)
+Algorithme de trading automatique basé sur du *reinforcement learning* (RL)
 
 ## Introduction
 ### Qu'est ce que Project Alpha ?
@@ -17,9 +17,20 @@ Je vais ici expliciter mes différents choix et les différents challenge que je
 ### Domaine d'application
 Le programme tradera uniquement des cryptomonnaies pour plusieurs raisons :
 * la data est gratuite et facile à obtenir, en une ligne de code je peux obtenir la data minute par minute d'une crypto depuis sa création
-* le marché me parait plus accessible
 * tout peut être facilement automatisé grâce à des api publiques très complètes
-* les marchés n'arrêtent jamais
+* c'est du 24h/24 7j/7
 * les marchés sont très volatiles
+* c'est plus exitant
+
+### Fonction objectif
+Il semblerait logique au premier abord de demander à l'algorithme de maximiser son profit. Mais ce n'est pas suffisant. Pour tester leurs algorithmes les tradeurs utilisent différents indicateurs que voici :
+* Net PnL (Net Profit and Loss) : Simplement combien l'algo gagne ou perd sur une certaine période de temps, moins les trading fees.
+* Alpha et Beta : Alpha définit à quel point la stratégie que vous utilisez est meilleure en terme de profit qu'une stratégie alternative sans risque. Beta exprime à quel point votre stratégie est volatile par rapport au marché.
+* Sharpe Ratio : Ce ratio mesure combien vous gagnez en plus par unité de risque que vous prenez.
+* Maximum Drawdown : C'est la différence maximum entre un minimum local et un maximum local. Un MD de 50% signifie que vous avez à un moment perdu 50% de votre capital.
+* Value at Risk (VaR) : Cette mesure quantifie avec une certaine probabilité combien vous pouvez perdre au maximum sur une certaine période de temps, sur un marché en condition normale.
+La meilleure statégie n'est donc pas toujours celle qui maximise le profit.
+
+
 
 
