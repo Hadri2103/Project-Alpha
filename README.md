@@ -21,6 +21,7 @@ Au premier abord on aurait tendance à vouloir simplement faire une prédiction 
 * Une _price prediction_ ne prend pas en compte les _fees_, latences, ect. La bourse c'est plus compliqué qu'un simple graphe qui fluctue.  
 
 On retient ici que le seul moyen de faire de l'argent avec un modèle de _price prediction_ est ou bien de faire des prédictions sur de grandes timeframes et donc de grandes différences de prix, ou bien d'avoir une très bonne stratégie de placement d'ordres et de gestion des fees (ce qui est extrêmement complexe).  
+  
 Mais le gros inconvénient d'un modèle de _price prediction_, c'est surtout qu'il n'a pas de stratégie. Imaginons que le modèle se trompe lors d'une prédiction, que doit il faire ? Tout vendre ? Vendre seulement une partie ? Et si le prix descend un peu plus remonte, le modèle doit il adopter la même stratégie que si le prix tombe ? Une prédiction du prix, aussi robuste soit-elle, ne peut être parfaite. C'est pourquoi on a besoin d'un modèle qui sait faire preuve de stratégie et qui sait faire des choix en fonction de la situation. On a besoin de _reinforcement learning_.
 
 ### Domaine d'application
