@@ -18,10 +18,9 @@ Je vais ici expliciter mes différents choix et les différents challenge que je
 Au premier abord on aurait tendance à vouloir simplement faire une prédiction de prix. Si on sait que le marché va monter lors des prochaines minutes on achète, et si on sait qu'il va descendre on vend. Il y a plusieurs problèmes avec cette approche :
 * Il n'y a pas qu'un seul prix. Il y a tout d'abord le _ask_, c'est plus petit prix auquel quelqu'un accepte de vendre. Ensuite il y a le _bid_, c'est le plus haut prix auquel quelqu'un accepte d'acheter. Une approche naïve serait de prédire le _mid price_, c'est la moyenne entre _ask_ et _bid_. Ce prix n'est que théorique et peut parfois être assez éloigné du prix réel.
 * Un achat ou une vente peut s'étaler sur plusieurs prix différents. Imaginons qu'on veut acheter 1 bitcoin et que le _ask_ est à 7000$. Cette personne accepte de vendre 0.1 bitcoin à 7000$. La personne suivante dans la liste accepte de vendre 0.9 bitcoin à 7020$. Quand on achète notre bitcoin il nous coûte au final plus cher que le prix affiché à la base, 7018$.
-* Une _price prediction_ ne prend pas en compte les _fees_, latences, ect. La bourse c'est plus compliqué qu'un simple graphe qui fluctue.
-<a/><a/>
-On retient ici que le seul moyen de faire de l'argent avec un modèle de _price prediction_ est ou bien de faire des prédictions sur de grandes timeframes et donc de grandes différences de prix, ou bien d'avoir une très bonne stratégie de placement d'ordres et de gestion des fees (ce qui est extrêmement complexe).
-<br> <br>
+* Une _price prediction_ ne prend pas en compte les _fees_, latences, ect. La bourse c'est plus compliqué qu'un simple graphe qui fluctue.  
+
+On retient ici que le seul moyen de faire de l'argent avec un modèle de _price prediction_ est ou bien de faire des prédictions sur de grandes timeframes et donc de grandes différences de prix, ou bien d'avoir une très bonne stratégie de placement d'ordres et de gestion des fees (ce qui est extrêmement complexe).  
 Mais le gros inconvénient d'un modèle de _price prediction_, c'est surtout qu'il n'a pas de stratégie. Imaginons que le modèle se trompe lors d'une prédiction, que doit il faire ? Tout vendre ? Vendre seulement une partie ? Et si le prix descend un peu plus remonte, le modèle doit il adopter la même stratégie que si le prix tombe ? Une prédiction du prix, aussi robuste soit-elle, ne peut être parfaite. C'est pourquoi on a besoin d'un modèle qui sait faire preuve de stratégie et qui sait faire des choix en fonction de la situation. On a besoin de _reinforcement learning_.
 
 ### Domaine d'application
