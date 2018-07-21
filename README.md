@@ -21,7 +21,7 @@ Au premier abord on aurait tendance à vouloir simplement faire une prédiction 
 * Une _price prediction_ ne prend pas en compte les _fees_, latences, ect. La bourse c'est plus compliqué qu'un simple graphe qui fluctue.
 <a/>
 On retient ici que le seul moyen de faire de l'argent avec un modèle de *price prediction* est ou bien de faire des prédictions sur de grandes timeframes et donc de grandes différences de prix, ou bien d'avoir une très bonne stratégie de placement d'ordres et de gestion des fees (ce qui est extrêmement complexe).
-\n
+<br> <br>
 Mais le gros inconvénient d'un modèle de *price prediction*
 
 ### Domaine d'application
