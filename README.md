@@ -24,12 +24,15 @@ Le programme tradera uniquement des cryptomonnaies pour plusieurs raisons :
 
 ### Fonction objectif
 Il semblerait logique au premier abord de demander à l'algorithme de maximiser son profit. Mais ce n'est pas suffisant. Pour tester leurs algorithmes les tradeurs utilisent différents indicateurs que voici :
-* Net PnL (Net Profit and Loss) : Simplement combien l'algo gagne ou perd sur une certaine période de temps, moins les trading fees.
-* Alpha et Beta : Alpha définit à quel point la stratégie que vous utilisez est meilleure en terme de profit qu'une stratégie alternative sans risque. Beta exprime à quel point votre stratégie est volatile par rapport au marché.
-* Sharpe Ratio : Ce ratio mesure combien vous gagnez en plus par unité de risque que vous prenez.
-* Maximum Drawdown : C'est la différence maximum entre un minimum local et un maximum local. Un MD de 50% signifie que vous avez à un moment perdu 50% de votre capital.
-* Value at Risk (VaR) : Cette mesure quantifie avec une certaine probabilité combien vous pouvez perdre au maximum sur une certaine période de temps, sur un marché en condition normale.
-La meilleure statégie n'est donc pas toujours celle qui maximise le profit.
+* Net PnL (Net Profit and Loss) : Simplement combien l'algo gagne ou perd sur une certaine période de temps, moins les trading fees. Il faut maximiser cet indice.
+* Alpha et Beta : Alpha définit à quel point la stratégie que vous utilisez est meilleure en terme de profit qu'une stratégie alternative sans risque. Beta exprime à quel point votre stratégie est volatile par rapport au marché. Un Alpha élevé et un Beta faible sont idéaux.
+* Sharpe Ratio : Ce ratio mesure combien vous gagnez en plus par unité de risque que vous prenez. Le plus élevé il est, le mieux c'est.
+* Maximum Drawdown : C'est la différence maximum entre un minimum local et un maximum local. Un MD de 50% signifie que vous avez à un moment perdu 50% de votre capital. Il faut minimiser cet indice le plus possible.
+* Value at Risk (VaR) : Cette mesure quantifie avec une certaine probabilité combien vous pouvez perdre au maximum sur une certaine période de temps, sur un marché en condition normale. Il faut également minimiser cet indicateur.
+[//]: # (Hello)
+La fonction objectif est donc un mélange judicieux de ces différents facteurs. Par exemple, on peut demander à l'algorithme de maximiser le profit tout en gardant le Maximum Drawdown sous les 20%. C'est à nous de décider quelles caractéristiques on veut donner à notre stratégie.
+
+### 
 
 
 
