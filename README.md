@@ -11,8 +11,8 @@ Il faut aussi comprendre que je mène ce projet en parallèle de mes études et 
 #### Tentatives infructueuses
 Ce n'est pas ma première tentative de créer un algorithme de trading automatique. Certaines de mes tentatives passées se trouvent sur ce github, d'autres non. Ces mois de travail infructueux m'ont apporté l'expérience nécessaire, je pense, pour mener ce dernier projet à bien.
 
-## Mise en place
-Je vais ici expliciter mes différents choix et les différents challenge que je dois surmonter pour mener à bien le projet. Cette partie se remplira au fur et à mesure de mon avancement.
+## Choix de conception
+Je vais ici expliciter dans leurs grandes lignes certains de mes choix de conception, sans rentrer dans les aspects techniques de l'algorithme.
 
 ### Pas une prédiction de prix
 Au premier abord on aurait tendance à vouloir simplement faire une prédiction de prix. Si on sait que le marché va monter lors des prochaines minutes on achète, et si on sait qu'il va descendre on vend. Il y a plusieurs problèmes avec cette approche :
@@ -43,9 +43,13 @@ Il semblerait logique au premier abord de demander à l'algorithme de maximiser 
 La fonction objectif est donc un mélange judicieux de ces différents facteurs. Par exemple, on peut demander à l'algorithme de maximiser son profit tout en gardant le Maximum Drawdown sous les 20%. C'est à nous de décider quelles caractéristiques on veut donner à notre stratégie.
 	
 ### Echelle temporelle
-Pour pouvoir trader à une échelle de jours, il faut pouvoir avoir une vision global de l'environnement autour de la monnaie. Beaucoup de facteurs rentrent en compte, tels que les news ou l'engouement général. Ce genre d'analyse est très difficile à automatiser avec des techniques de _machine learning_. De l'autre côté on trouve le trading à haute fréquence, les trades se font à des échelles de millisecondes et même parfois de nanosecondes. Les stratégies sont très simples et réagissent à certains patterns. Un _neural net_, bien que beaucoup plus rapide que l'humain, est très lent par rapport à ces stratégies "no brain". Il ne peut les battre.
-<br> <br>
+Pour pouvoir trader à une échelle de jours, il faut pouvoir avoir une vision global de l'environnement autour de la monnaie. Beaucoup de facteurs rentrent en compte, tels que les news ou l'engouement général. Ce genre d'analyse est très difficile à automatiser avec des techniques de _machine learning_. De l'autre côté on trouve le trading à haute fréquence, les trades se font à des échelles de millisecondes et même parfois de nanosecondes. Les stratégies sont très simples et réagissent à certains patterns. Un _neural net_, bien que beaucoup plus rapide que l'humain, est très lent par rapport à ces stratégies "no brain". Il ne peut les battre.  
+  
 L'échelle temporelle idéale pour notre algorithme se trouve quelque part entre ces deux extrêmes. On veut une échelle temporelle où on peut analyser la data plus rapidement qu'un humain et où l'intelligence de notre algo permet de battre les programmes simples mais rapides. Je pense que l'algorithme trouve sa place quelque part entre des échelles de quelques millisecondes et de quelques minutes. Un humain peut certainement être compétant à une échelle de minutes mais il ne peut pas prendre en compte autant de data que notre algorithme et être aussi rapide. 
+
+## Aspects techniques
+Je vais ici expliciter les challenges auquels je fais face dans la réalisation de ce projet. Certains aspects peuvent être difficiles à comprendre pour une personne n'ayant jamais touché au _machine learning_ et particulièrement au _reinforcement learning_.
+
 
 
 
