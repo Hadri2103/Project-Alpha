@@ -14,6 +14,16 @@ Ce n'est pas ma première tentative de créer un algorithme de trading automatiq
 ## Mise en place
 Je vais ici expliciter mes différents choix et les différents challenge que je dois surmonter pour mener à bien le projet. Cette partie se remplira au fur et à mesure de mon avancement.
 
+### Pas une prédiction de prix
+Au premier abord on aurait tendance à vouloir simplement faire une prédiction de prix. Si on sait que le marché va monter lors des prochaines minutes on achète, et si on sait qu'il va descendre on vend. Il y a plusieurs problèmes avec cette approche :
+* Il n'y a pas qu'un seul prix. Il y a tout d'abord le _ask_, c'est plus petit prix auquel quelqu'un accepte de vendre. Ensuite il y a le _bid_, c'est le plus haut prix auquel quelqu'un accepte d'acheter. Une approche naïve serait de prédire le _mid price_, c'est la moyenne entre _ask_ et _bid_. Ce prix n'est que théorique et peut parfois être assez éloigné du prix réel.
+* Un achat ou une vente peut s'étaler sur plusieurs prix différents. Imaginons qu'on veut acheter 1 bitcoin et que le _ask_ est à 7000$. Cette personne accepte de vendre 0.1 bitcoin à 7000$. La personne suivante dans la liste accepte de vendre 0.9 bitcoin à 7020$. Quand on achète notre bitcoin il nous coûte au final plus cher que le prix affiché à la base, 7018$.
+* Une _price prediction_ ne prend pas en compte les _fees_, latences, ect. La bourse c'est plus compliqué qu'un simple graphe qui fluctue.
+<a/>
+On retient ici que le seul moyen de faire de l'argent avec un modèle de *price prediction* est ou bien de faire des prédictions sur de grandes timeframes et donc de grandes différences de prix, ou bien d'avoir une très bonne stratégie de placement d'ordres et de gestion des fees (ce qui est extrêmement complexe).
+\n
+Mais le gros inconvénient d'un modèle de *price prediction*
+
 ### Domaine d'application
 Le programme tradera uniquement des cryptomonnaies pour plusieurs raisons :
 * la data est gratuite et facile à obtenir, en une ligne de code je peux obtenir la data minute par minute d'une crypto depuis sa création
@@ -30,9 +40,9 @@ Il semblerait logique au premier abord de demander à l'algorithme de maximiser 
 * Maximum Drawdown : C'est la différence maximum entre un minimum local et un maximum local. Un MD de 50% signifie que vous avez à un moment perdu 50% de votre capital. Il faut minimiser cet indice le plus possible.
 * Value at Risk (VaR) : Cette mesure quantifie avec une certaine probabilité combien vous pouvez perdre au maximum sur une certaine période de temps, sur un marché en condition normale. Il faut également minimiser cet indicateur.
 <a/>
-La fonction objectif est donc un mélange judicieux de ces différents facteurs. Par exemple, on peut demander à l'algorithme de maximiser le profit tout en gardant le Maximum Drawdown sous les 20%. C'est à nous de décider quelles caractéristiques on veut donner à notre stratégie.
+La fonction objectif est donc un mélange judicieux de ces différents facteurs. Par exemple, on peut demander à l'algorithme de maximiser son profit tout en gardant le Maximum Drawdown sous les 20%. C'est à nous de décider quelles caractéristiques on veut donner à notre stratégie.
 
-### 
+
 
 
 
